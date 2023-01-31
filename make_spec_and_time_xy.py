@@ -78,7 +78,6 @@ if ans1 == "pph":
     # --bins: the centers of the time bins
     # --im: the .image.AxesImage instance representing the data in the plot
     plt.ylim(0, 2)
-    plt.colorbar(imy,ax=(ax3,ax4), aspect=40, fraction=0.01)
     plt.xlabel("Time" )
     plt.ylabel("Y Freq [Hz]")
 
