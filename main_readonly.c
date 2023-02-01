@@ -77,7 +77,7 @@ static void newfile(void)
     {
         localtime_r( &( rcvtime.tv_sec ), &ttime );
         strftime( time_string, 32, "%Y%m%d_%H%M", &ttime );
-        snprintf( fname, sizeof( fname ), "ULF-%s.txt", time_string );
+        snprintf( fname, sizeof( fname ), "ULF-UNH-%s.txt", time_string );
         snprintf( pathname, sizeof( pathname ), "%s%s", DAQPATH, fname );
         if(dfile) fclose(dfile);
         dfile = fopen( pathname,"wct" );
@@ -245,11 +245,6 @@ int main (int argc, const char * argv[])
     struct  termios com_io;
     struct timeval t0,t1,delta;
     long usec;
-    FILE *err_file;
-
-    err_file = fopen("/home/pi-unh-hdmi/ULF/ERROR_FILE", "w");
-    fprintf(err_file, "apparently it works to print to\n");
-        
     
     // may need to be changed if usb is unplugged
     ttydev = "/dev/ttyUSB0";
@@ -260,7 +255,7 @@ int main (int argc, const char * argv[])
     
     while(ttyfd<0)
     {
-        fprintf(err_file,"tty open '%s' failed\ntty?",ttydev);
+        printf("tty open '%s' failed\ntty?",ttydev);
         ttydev = fgets( line, sizeof( line ), stdin );    // new name
         if(strlen(ttydev) < 4) return 0; // should be "/dev/xxx" give up on empty string
         ttydev[strlen(ttydev)-1]=0; // get rid of newline
