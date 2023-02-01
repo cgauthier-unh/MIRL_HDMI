@@ -15,7 +15,7 @@ while true; do
     then
         :
     else
-        python /home/pi-unh-hdmi/ULF/make_spec_and_time.py x rtd 300 &
+        python /home/pi-unh-hdmi/ULF/make_spec_and_time_xy.py rtd 180 &
     fi
     sleep 60
 done
