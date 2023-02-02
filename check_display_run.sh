@@ -8,7 +8,7 @@ RTD="python"
 
 # This kills the python command when the terminal is opened
 pkill -x "$RTD"
-sleep 305
+sleep 200
 
 while true; do
     if pgrep -x "$RTD" >/dev/null
