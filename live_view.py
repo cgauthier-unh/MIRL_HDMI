@@ -12,6 +12,9 @@ Displays (over a trailing user window):
 
 Dependencies:
   pip install numpy matplotlib scipy
+
+  How to run:
+  python live_view.py /path/to/yourfile.txt --window 600 --poll 0.25 --fmax 5
 """
 
 import argparse
