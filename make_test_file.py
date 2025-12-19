@@ -9,6 +9,8 @@ Creates/overwrites an output file and then continuously appends 3-column rows:
 - Optional "midnight" reset simulation: periodically truncates the file and resets time to 0
 
 Run this in one terminal, and the live viewer in another.
+
+python make_test_file.py /tmp/live_test.txt --fs 10 --noise 0.08 --reset-every 120 --flush
 """
 
 import argparse
